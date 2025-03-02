@@ -9,7 +9,7 @@ const experiencias = [
       'Implementação de soluções completas desde protótipo até deploy',
       'Colaboração em projetos open source',
     ],
-    tech: ['Laravel', 'Vue.js', 'Node.js', "DevOps", 'Docker'],
+    tech: ['Laravel', 'Vue.js', 'Node.js', 'DevOps', 'Docker'],
   },
 ]
 </script>

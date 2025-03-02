@@ -110,18 +110,6 @@ const closeModal = () => (showContact.value = false)
             </p>
           </div>
 
-          <div class="flex justify-center gap-4">
-            <button
-              @click="openModal"
-              class="bg-indigo-600 text-white px-8 py-3 rounded-full hover:bg-indigo-700 transition-transform hover:scale-105 shadow-lg"
-            >
-              Contato Profissional
-            </button>
-          </div>
-
-          <p class="mt-6 text-sm text-gray-500 dark:text-gray-400">
-            Portfólio construído com Vue.js e Tailwind CSS
-          </p>
         </div>
       </section>
 
@@ -210,71 +198,67 @@ const closeModal = () => (showContact.value = false)
         </div>
       </section>
 
-      <!-- Modal de Contato -->
-      <teleport to="body">
-        <transition name="modal">
-          <div
-            v-if="showContact"
-            class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
-            @click.self="closeModal"
+      <!-- Contato Flutuante -->
+      <div class="fixed bottom-8 right-8 z-50 group">
+        <div
+          class="flex items-center gap-4 bg-white dark:bg-gray-800 rounded-full shadow-2xl p-4 pr-6 border border-gray-200 dark:border-gray-700 transition-all duration-500 hover:shadow-lg hover:scale-105"
+        >
+          <!-- Email Principal -->
+          <a
+            href="mailto:contato@marcilio.dev.br"
+            class="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
           >
-            <div
-              class="bg-white dark:bg-gray-800 rounded-2xl p-8 max-w-md w-full relative transform transition-all"
-            >
-              <button
-                @click="closeModal"
-                class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-300"
-              >
-                <i class="bx bx-x text-2xl"></i>
-              </button>
-
-              <h3 class="text-2xl font-bold mb-6 text-indigo-600 dark:text-indigo-400">
-                Contato Profissional
-              </h3>
-
-              <div class="space-y-4">
-                <div class="flex items-center gap-4 p-3 bg-indigo-50 dark:bg-gray-700 rounded-lg">
-                  <i class="bx bx-envelope text-2xl text-indigo-600 dark:text-indigo-400"></i>
-                  <span class="text-gray-600 dark:text-gray-300">marcilio@dev.com</span>
-                </div>
-
-                <div class="flex justify-center gap-6 mt-8">
-                  <a
-                    href="#"
-                    class="p-3 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition-transform hover:scale-110"
-                  >
-                    <i class="bx bxl-linkedin text-2xl"></i>
-                  </a>
-                  <a
-                    href="#"
-                    class="p-3 bg-gray-800 dark:bg-gray-700 text-white rounded-full hover:bg-gray-700 dark:hover:bg-gray-600 transition-transform hover:scale-110"
-                  >
-                    <i class="bx bxl-github text-2xl"></i>
-                  </a>
-                  <a
-                    href="#"
-                    class="p-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-transform hover:scale-110"
-                  >
-                    <i class="bx bxl-whatsapp text-2xl"></i>
-                  </a>
-                </div>
-              </div>
+            <div class="p-3 bg-indigo-100 dark:bg-gray-700 rounded-full">
+              <i class="bx bx-envelope text-indigo-600 dark:text-indigo-400 text-xl"></i>
             </div>
-          </div>
-        </transition>
-      </teleport>
+            <span class="font-medium">contato@marcilio.dev.br</span>
+          </a>
 
-    <!-- Footer -->
-    <footer class="bg-gray-100 dark:bg-gray-800 mt-16 py-8">
-      <div class="container mx-auto px-6 text-center">
-        <p class="text-gray-600 dark:text-gray-300 text-sm">
-          © 2025 Marcilio Ortiz.<br />
-          Desenvolvido com Vue.js, Tailwind CSS.
-        </p>
+          <!-- Divisor -->
+          <div class="h-8 w-px bg-gray-200 dark:bg-gray-600 mx-2"></div>
+
+          <!-- Redes Sociais -->
+          <div class="flex gap-3">
+            <a
+              href="https://www.linkedin.com/in/marc%C3%ADlio-ortiz-barbosa-7b5a35165/"
+              class="p-3 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition-all duration-300 hover:rotate-12"
+            >
+              <i class="bx bxl-linkedin text-xl"></i>
+            </a>
+            <a
+              href="https://github.com/KriawqZero"
+              class="p-3 bg-gray-800 dark:bg-gray-700 text-white rounded-full hover:bg-gray-700 dark:hover:bg-gray-600 transition-all duration-300 hover:rotate-12"
+            >
+              <i class="bx bxl-github text-xl"></i>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send?phone=5567984079762"
+              class="p-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition-all duration-300 hover:rotate-12"
+            >
+              <i class="bx bxl-whatsapp text-xl"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Balão decorativo -->
+        <div
+          class="absolute -top-4 -right-4 bg-indigo-600 text-white px-3 py-1 rounded-full text-sm shadow-lg transform scale-0 group-hover:scale-100 transition-transform"
+        >
+          Vamos conversar?
+        </div>
       </div>
-    </footer>
-  </div>
+
+      <!-- Footer -->
+      <footer class="bg-gray-100 dark:bg-gray-800 mt-16 py-8">
+        <div class="container mx-auto px-6 text-center">
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            © 2025 Marcilio Ortiz.<br />
+            Desenvolvido com Vue.js, Tailwind CSS.
+          </p>
+        </div>
+      </footer>
     </div>
+  </div>
 </template>
 
 <style>
@@ -283,14 +267,17 @@ const closeModal = () => (showContact.value = false)
 }
 
 @keyframes grid-move {
-  from { background-position: 0 0; }
-  to { background-position: 80px 80px; }
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 80px 80px;
+  }
 }
 
 .animate-grid {
   animation: grid-move 40s linear infinite;
 }
-
 
 @keyframes blob-float {
   0%,

@@ -14,8 +14,8 @@ const sobre = {
       titulo: 'Sistema de Gestão de Certificados',
       descricao: 'Plataforma full-stack para automação de processos acadêmicos',
       tecnologias: ['Laravel 11', 'MariaDB', 'TailwindCSS', 'AlpineJS'],
-      impacto: 'Adoção institucional com mais de 1.000 usuários ativos'
-    }
+      impacto: 'Adoção institucional com mais de 1.000 usuários ativos',
+    },
   },
   habilidades: [
     'Desenvolvimento Full Stack',
@@ -60,13 +60,17 @@ const sobre = {
                 <p class="text-indigo-600 dark:text-indigo-400 font-medium">
                   {{ sobre.formacaoTecnica.curso }}
                 </p>
-                <p class="text-gray-600 dark:text-gray-300">{{ sobre.formacaoTecnica.instituicao }}</p>
+                <p class="text-gray-600 dark:text-gray-300">
+                  {{ sobre.formacaoTecnica.instituicao }}
+                </p>
                 <p class="text-sm text-gray-500 dark:text-gray-400">
                   {{ sobre.formacaoTecnica.periodo }}
                 </p>
                 <div class="mt-3">
                   <p class="text-sm font-medium text-gray-800 dark:text-gray-200">TCC Destaque:</p>
-                  <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 text-sm space-y-1 mt-1">
+                  <ul
+                    class="list-disc list-inside text-gray-600 dark:text-gray-400 text-sm space-y-1 mt-1"
+                  >
                     <li>{{ sobre.formacaoTecnica.tcc.titulo }}</li>
                     <li>Tecnologias: {{ sobre.formacaoTecnica.tcc.tecnologias.join(', ') }}</li>
                     <li>{{ sobre.formacaoTecnica.tcc.impacto }}</li>
