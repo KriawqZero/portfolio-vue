@@ -5,6 +5,9 @@ WORKDIR /app
 
 # Copia e instala dependências
 COPY package.json package-lock.json ./
+
+RUN npm install esbuild@0.25.0 --save-dev
+
 RUN npm install
 
 # Copia todo o código-fonte
